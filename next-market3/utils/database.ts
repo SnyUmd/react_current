@@ -3,8 +3,10 @@
 import mongoose from "mongoose"
 
 var dbName = `appDataBase`
-// var mongodbAddress = `mongodb+srv://root:12345roOt@cluster0.cqdnb95.mongodb.net/${dbName}?retryWrites=true&w=majority`
-var mongodbAddress = `mongodb+srv://root:@cluster0.cqdnb95.mongodb.net/?retryWrites=true&w=majority`
+var dbPass = `12345roOt`
+
+var mongodbAddress = `mongodb+srv://root:${dbPass}@cluster0.cqdnb95.mongodb.net/${dbName}?retryWrites=true&w=majority`
+// var mongodbAddress = `mongodb+srv://root:@cluster0.cqdnb95.mongodb.net/?retryWrites=true&w=majority`
 
 const connectDB = () => {
     try{
