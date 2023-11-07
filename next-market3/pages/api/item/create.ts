@@ -1,19 +1,14 @@
 import connectDB from "@/utils/database"
 import { ItemModel } from "@/utils/schemaModels"
+import outLog from "@/utils/comon"
 
 
 //************************************************************************** */
 const createItem = async(req, res) => {
     try{
-        // console.log(`=========================`)
-        outLog(`<><><><><><><><><><><><><><>`)
-        // console.log(`DB Access : ${await connectDB().toString()}`)
         await connectDB()
-        outLog(`<><><><><><><><><><><><><><>`)
-        // console.log(`=========================`)
+        outLog("-------------------------------");
         console.log(req.body)
-        // console.log(`\n`)
-        outLog(`<><><><><><><><><><><><><><>`)
         await ItemModel.create(req.body)
         return res.status(200).json({message: "アイテム作成成功"})
     }catch(err){
@@ -21,10 +16,7 @@ const createItem = async(req, res) => {
     }
 }
 
-//************************************************************************** */
-const outLog = (mess: string) =>{
-    console.log(mess)
-}
+
 
 
 export default createItem
