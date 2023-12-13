@@ -1,23 +1,24 @@
 import React from 'react'
 // import { useNavigate } from 'react-router-dom';
 
-export const Header = ({titleName, btnName, nextPage, btnFn, onClickFu, statuses}) => {
+// export const Header = ({titleName, btnName, nextPage, btnFn, onClickFu, props}) => {
+export const Header = (Props) => {
     // const navigate = useNavigate();
     // const btnLabel = "test"
 
     return (
         <div style={{background: "lightblue"}}>
             <br/>
-            <label>{titleName}</label>
+            <label>{Props.titleName}</label>
             <br/>
             <br/>
             <button
                 id='bntMesurement001'
                 onClick={()=>{
-                    console.log(`click to ${btnName}`);
-                    btnFn();
+                    console.log(`click to ${Props.btnName}`);
+                    Props.btnFn();
                 }}>
-                {btnName}
+                {Props.btnName}
             </button>
             <br/>
             <br/>
